@@ -12,14 +12,13 @@
   }
 
   if (!slug) {
-    // index: list every project
+    // index: oversized project names, one-line summary under each
     mount.innerHTML = projects
       .map(
         (p) => `
         <a class="project-item" href="/work/${esc(p.slug)}/">
           <div class="project-item-title">${esc(p.title)}</div>
-          <div class="project-item-meta">${esc(p.meta)}</div>
-          <div class="project-item-summary">${esc(p.summary)}</div>
+          <div class="project-item-summary"><strong>${esc(p.meta)}</strong> — ${esc(p.summary)}</div>
         </a>`
       )
       .join("");
@@ -32,31 +31,22 @@
     }
     document.title = p.title + " — rohu";
     mount.innerHTML = `
-      <h1 class="page-title">${esc(p.title)}</h1>
+      <h1 class="project-detail-title">${esc(p.title)}</h1>
       <div class="project-detail-meta">${esc(p.meta)}</div>
 
-      ${p.context ? `<div class="project-section">
-        <div class="project-section-label">context</div>
-        <p>${esc(p.context)}</p>
-      </div>` : ""}
+      ${(p.story || []).map((para) => `<p class="project-story">${esc(para)}</p>`).join("")}
 
-      ${p.actions ? `<div class="project-section">
-        <div class="project-section-label">what i did</div>
-        <p>${esc(p.actions)}</p>
-      </div>` : ""}
-
-      ${p.outcomes && p.outcomes.length ? `<div class="project-section">
-        <div class="project-section-label">outcomes</div>
+      ${p.outcomes && p.outcomes.length ? `
         <ul class="project-outcomes">
           ${p.outcomes.map((o) => `<li>${esc(o)}</li>`).join("")}
         </ul>
-      </div>` : ""}
+      ` : ""}
 
-      ${p.links && p.links.length ? `<div class="project-section">
+      ${p.links && p.links.length ? `
         <div class="project-links">
           ${p.links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join("")}
         </div>
-      </div>` : ""}
+      ` : ""}
     `;
   }
 })();
