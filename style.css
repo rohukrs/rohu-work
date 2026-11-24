@@ -533,3 +533,4 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .vid-title .arc-arrow { color: var(--fg2); }
 .vid-plain { min-width: 0; }
 .vid-plain .arc-link { overflow-wrap: anywhere; }
+.sel-top .page-title { font-size: clamp(44px, 7.5vw, 76px); white-space: nowrap; }
