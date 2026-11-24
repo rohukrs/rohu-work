@@ -165,3 +165,152 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 @media (prefers-reduced-motion: reduce) {
   :root { --speed: 0s; }
 }
+
+/* ============================================================
+   inner pages (work, life, write, videos, about)
+   plain scrolling pages, not the fixed homepage canvas
+   ============================================================ */
+
+:root {
+  --fg2: #c3b9a6; /* muted warm grey, secondary text */
+}
+
+.page {
+  min-height: 100vh;
+  overflow: visible;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 48px 24px 96px;
+}
+
+.page-home {
+  display: inline-block;
+  font-size: 32px;
+  letter-spacing: -0.05em;
+  color: var(--fg);
+  text-decoration: none;
+  margin-bottom: 64px;
+}
+.page-home:hover { opacity: 0.85; }
+
+.page-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.page-eyebrow {
+  color: var(--fg2);
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.page-title {
+  font-size: clamp(40px, 8vw, 72px);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.page-lede {
+  color: var(--fg2);
+  font-size: clamp(18px, 2.5vw, 22px);
+  line-height: 1.5;
+  max-width: 56ch;
+  margin-bottom: 56px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-item-title {
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.05em;
+  color: var(--fg);
+  transition: opacity 0.2s ease;
+}
+.project-item:hover .project-item-title { opacity: 0.8; }
+
+.project-item-meta {
+  color: var(--fg2);
+  font-size: 15px;
+  margin: 4px 0 8px;
+}
+
+.project-item-summary {
+  color: var(--fg2);
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 56ch;
+}
+
+.project-detail-meta {
+  color: var(--fg2);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.project-section {
+  margin-bottom: 32px;
+}
+
+.project-section-label {
+  color: var(--fg2);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.project-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.project-outcomes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-outcomes li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.project-outcomes li::before {
+  content: "— ";
+  color: var(--fg2);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.project-links a {
+  color: var(--fg);
+  font-size: 17px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--fg2);
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+.back-link:hover { color: var(--fg); }

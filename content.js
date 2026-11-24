@@ -33,7 +33,7 @@ window.SITE = {
 
   menu: [
     { label: "life",   link: "#", preview: null },
-    { label: "work",   link: "#", preview: { style: "icon", image: "assets/work.webp" } },
+    { label: "work",   link: "/work/", preview: { style: "icon", image: "assets/work.webp" } },
     { label: "write",  link: "#", preview: { style: "card", image: "assets/write.webp" } },
     { label: "videos", link: "https://www.youtube.com/@rohukrs", preview: { style: "wide", image: "assets/videos.webp" } },
   ],
