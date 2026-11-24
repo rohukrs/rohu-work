@@ -12,18 +12,43 @@
   }
 
   if (!slug) {
-    // index: the archive. intro, experience, selected work, writing.
+    // index: selected work first, then experience / resume, then writing.
     const A = window.WORK.archive;
     const ext = (url, label) =>
       `<a class="arc-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}<span class="arc-arrow" aria-hidden="true">↗</span></a>`;
 
+    // one video tile: a 16:9 embed with the title linking to the original video.
+    const vid = (it) => {
+      if (it.youtube) {
+        return `
+        <figure class="vid">
+          <div class="vid-frame"><iframe src="https://www.youtube-nocookie.com/embed/${esc(it.youtube)}" title="${esc(it.title)}" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+          <figcaption><a class="vid-title" href="https://www.youtube.com/watch?v=${esc(it.youtube)}" target="_blank" rel="noopener">${esc(it.title)}<span class="arc-arrow" aria-hidden="true">↗</span></a></figcaption>
+        </figure>`;
+      }
+      if (it.needsEmbed) {
+        return `
+        <figure class="vid">
+          <div class="vid-frame vid-empty"><span>add a youtube link in content-work.js</span></div>
+          <figcaption><a class="vid-title" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}<span class="arc-arrow" aria-hidden="true">↗</span></a></figcaption>
+        </figure>`;
+      }
+      return `<div class="vid-plain">${ext(it.url, it.title)}</div>`;
+    };
+
     mount.innerHTML = `
-      <section class="arc-intro">
-        ${A.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
+      <section class="arc-section sel-top" aria-labelledby="arc-sel">
+        <h1 class="page-title" id="arc-sel">selected work</h1>
+        ${A.selected.map((g) => `
+          <div class="arc-group">
+            <h2 class="arc-group-title">${esc(g.heading)}</h2>
+            ${g.note ? `<p class="arc-note">${esc(g.note)}</p>` : ""}
+            <div class="vgrid">${g.items.map(vid).join("")}</div>
+          </div>`).join("")}
       </section>
 
       <section class="arc-section" aria-labelledby="arc-exp">
-        <h2 class="arc-heading" id="arc-exp">experience</h2>
+        <h2 class="arc-heading" id="arc-exp">experience / resume</h2>
         <ol class="tl">
           ${A.experience.map((e, i) => {
             const num = String(i + 1).padStart(2, "0");
@@ -55,14 +80,8 @@
         </ol>
       </section>
 
-      <section class="arc-section" aria-labelledby="arc-sel">
-        <h2 class="arc-heading" id="arc-sel">selected work</h2>
-        ${A.selected.map((g) => `
-          <div class="arc-group">
-            <h3 class="arc-group-title">${esc(g.heading)}</h3>
-            ${g.note ? `<p class="arc-note">${esc(g.note)}</p>` : ""}
-            <ul class="arc-links">${g.items.map((it) => `<li>${ext(it.url, it.title)}</li>`).join("")}</ul>
-          </div>`).join("")}
+      <section class="arc-section arc-intro" aria-label="about">
+        ${A.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
       </section>
 
       <section class="arc-section" aria-labelledby="arc-write">

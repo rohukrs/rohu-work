@@ -120,12 +120,12 @@ window.WORK.archive = {
     {
       name: "made it desi",
       url: "https://www.madeitdesi.com/",
-      role: "creator, host & founder",
+      role: "creator & host · founder",
       dates: "2025 to present",
       place: "",
       about: [
-        "an independent film and storytelling project documenting desi founders, creators and people building something of their own.",
-        "i develop the stories, meet the people behind them, and bring their journeys to screen. season 3, shakti, focuses on women founders and their journeys.",
+        "made it desi is an independent storytelling project documenting desi founders, creators, and people who have left home to build something of their own. through films and conversations, i explore the people behind the ideas, their journeys, failures, and the moments that shaped them.",
+        "season 3, shakti, spotlights women founders and their stories.",
       ],
       points: [],
       links: [
@@ -218,19 +218,19 @@ window.WORK.archive = {
       heading: "founder stories & interviews",
       note: "made it desi. meeting people, hearing their stories, turning them into films.",
       items: [
-        { title: "changing the future: angad daryani", url: "https://www.youtube.com/watch?v=X7GyQyFZim0&t=10s" },
-        { title: "this 20 year old is decentralizing human intelligence", url: "https://www.youtube.com/watch?v=hI0r-qHtjQg&t=24s" },
-        // couldn't read the title behind this short link. rename it to the real story title.
-        { title: "another founder story", url: "https://t.co/q41nSIBZWP" },
+        { title: "changing the future: angad daryani", youtube: "X7GyQyFZim0", url: "https://www.youtube.com/watch?v=X7GyQyFZim0" },
+        { title: "this 20 year old is decentralizing human intelligence", youtube: "hI0r-qHtjQg", url: "https://www.youtube.com/watch?v=hI0r-qHtjQg" },
+        // placeholder: paste the real youtube link as youtube: "VIDEO_ID" once you have it
+        { title: "another founder story", url: "https://t.co/q41nSIBZWP", needsEmbed: true },
       ],
     },
     {
       heading: "video editing",
       note: "",
       items: [
-        { title: "g‑shock × kieren d'souza", url: "https://www.youtube.com/watch?v=BrrJi7I9ZRU" },
-        { title: "under armour india", url: "https://www.youtube.com/watch?v=T32V0yAOsKQ" },
-        { title: "thaicrate, fresh thai food delivery", url: "https://www.youtube.com/watch?v=rqM4MWneH8s" },
+        { title: "g-shock × kieren d'souza", youtube: "BrrJi7I9ZRU", url: "https://www.youtube.com/watch?v=BrrJi7I9ZRU" },
+        { title: "under armour india", youtube: "T32V0yAOsKQ", url: "https://www.youtube.com/watch?v=T32V0yAOsKQ" },
+        { title: "thaicrate, fresh thai food delivery", youtube: "rqM4MWneH8s", url: "https://www.youtube.com/watch?v=rqM4MWneH8s" },
       ],
     },
   ],
