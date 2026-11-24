@@ -17,7 +17,7 @@
         ${S.menu
           .map(
             (m) =>
-              `<a href="${m.link}" ${m.label === section ? 'aria-current="true" class="active"' : ""}>${m.label}</a>`
+              `<a href="${m.page}" ${m.label === section ? 'aria-current="true" class="active"' : ""}>${m.label}</a>`
           )
           .join("")}
       </nav>

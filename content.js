@@ -2,23 +2,18 @@
   ============================================================
   EDIT YOUR WEBSITE HERE
   ============================================================
-  this is the only file you need to touch to change your site.
+  this is the only file you need to touch to change the homepage.
   change the text between the quotes, save, and redeploy.
 
   menu items:
-    label    the word shown in the menu
-    link     where it goes when someone clicks it again
-             (use "#" for nothing yet, a full https:// link for other sites)
-    preview  what pops up when the word is selected, or null for nothing
-             style can be:
-               "icon"  small round image right next to the word
-               "card"  tall rounded card on the right
-               "wide"  big panel that runs off the right edge
-             image is a file inside the assets folder
+    label        the word shown in the reel and nav (life/work/write/videos)
+    description  one or two short sentences shown when this section is selected.
+                 write it as plain text — line breaks become separate paragraphs.
+    cta          optional {label, href} link shown under the description,
+                 e.g. linking "work" through to the full /work/ page. use
+                 null for none.
 
-  to add an item, copy one { ... } line, paste it, and change it.
-  to remove one, delete its line.
-  to swap an image, drop a new file into assets/ and change the name here.
+  quickLinks: the small row of links at the bottom of the identity column.
 */
 
 window.SITE = {
@@ -26,15 +21,43 @@ window.SITE = {
   tagline: "est 1997",
   photo: "assets/stamp.webp",
 
-  colors: {
-    background: "#154dc7",
-    text: "#ffc766",
-  },
-
   menu: [
-    { label: "life",   link: "#", preview: null },
-    { label: "work",   link: "/work/", preview: { style: "icon", image: "assets/work.webp" } },
-    { label: "write",  link: "#", preview: { style: "card", image: "assets/write.webp" } },
-    { label: "videos", link: "https://www.youtube.com/@rohukrs", preview: { style: "wide", image: "assets/videos.webp" } },
+    {
+      label: "life",
+      // no separate page yet — this is the homepage's own section.
+      page: "/",
+      description:
+        "a little bit of everything. the people, places and small moments that make up a life.",
+      cta: null,
+    },
+    {
+      label: "work",
+      page: "/work/",
+      description:
+        "i build products, grow communities and tell stories. a mix of product thinking, startup building and creative work.",
+      cta: { label: "see full work ↗", href: "/work/" },
+    },
+    {
+      label: "write",
+      // not built yet — points home until /write/ exists.
+      page: "/",
+      description:
+        "essays, observations, lessons from building things and unfinished thoughts. a place for ideas that deserve more than a social post.",
+      cta: null,
+    },
+    {
+      label: "videos",
+      // not built yet — points home until /videos/ exists.
+      page: "/",
+      description:
+        "films, founder stories, interviews and experiments in moving images. selected work and stories from made it desi.",
+      cta: { label: "watch made it desi on instagram ↗", href: "https://www.instagram.com/madeitdesi/" },
+    },
+  ],
+
+  quickLinks: [
+    { label: "linkedin ↗", href: "https://www.linkedin.com/in/rohit-kumar-0443b3183/" },
+    { label: "made it desi ↗", href: "https://www.instagram.com/madeitdesi/" },
+    { label: "email ↗", href: "mailto:workwithrohitkr@gmail.com" },
   ],
 };

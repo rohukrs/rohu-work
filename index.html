@@ -8,18 +8,31 @@
   <meta property="og:title" content="rohu" />
   <meta property="og:description" content="rohu. life, work, write, videos." />
   <meta property="og:image" content="assets/stamp.webp" />
-  <meta name="theme-color" content="#154dc7" />
+  <meta name="theme-color" content="#194fc7" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="stage" id="stage">
-    <p class="est" id="est"></p>
-    <img class="photo" id="photo" alt="" />
-    <button class="name" id="name" type="button"></button>
-    <nav class="menu" id="menu" aria-label="menu"></nav>
-    <div id="previews"></div>
+  <div class="est" id="est"></div>
+  <main class="stage">
+    <div class="portrait">
+      <img class="stamp" id="photo" alt="" />
+    </div>
+    <section class="identity" aria-label="rohu personal website">
+      <div class="brand">
+        <a class="brand-name" id="brandName" href="/"></a>
+        <span class="reel-window" id="reelWindow">
+          <span class="reel-track" id="reelTrack"></span>
+        </span>
+      </div>
+      <nav class="nav" id="nav" aria-label="choose a section"></nav>
+      <div class="section-content" id="sectionContent"></div>
+      <div class="quick-links" id="quickLinks" aria-label="find me online"></div>
+    </section>
   </main>
-  <p class="hint" id="hint">scroll or click</p>
+  <footer class="site-footer">
+    <span>rohu.work — personal archive</span>
+    <span>san francisco · made with curiosity</span>
+  </footer>
 
   <script src="content.js"></script>
   <script src="script.js"></script>
