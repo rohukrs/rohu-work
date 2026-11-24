@@ -12,16 +12,45 @@
   }
 
   if (!slug) {
-    // index: oversized project names, one-line summary under each
-    mount.innerHTML = projects
-      .map(
-        (p) => `
-        <a class="project-item" href="/work/${esc(p.slug)}/">
-          <div class="project-item-title">${esc(p.title)}</div>
-          <div class="project-item-summary"><strong>${esc(p.meta)}</strong> — ${esc(p.summary)}</div>
-        </a>`
-      )
-      .join("");
+    // index: the archive. intro, experience, selected work, writing.
+    const A = window.WORK.archive;
+    const ext = (url, label) =>
+      `<a class="arc-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}<span class="arc-arrow" aria-hidden="true">↗</span></a>`;
+
+    mount.innerHTML = `
+      <section class="arc-intro">
+        ${A.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
+      </section>
+
+      <section class="arc-section" aria-labelledby="arc-exp">
+        <h2 class="arc-heading" id="arc-exp">experience</h2>
+        <div class="arc-exp-list">
+          ${A.experience.map((e) => `
+            <article class="arc-exp">
+              <h3 class="arc-company">${esc(e.company)}${e.place ? `<span class="arc-place">${esc(e.place)}</span>` : ""}</h3>
+              <p class="arc-role">${esc(e.role)} · ${esc(e.dates)}</p>
+              ${e.about ? `<p class="arc-about">${esc(e.about)}</p>` : ""}
+              <ul class="arc-points">${e.points.map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>
+            </article>`).join("")}
+        </div>
+      </section>
+
+      <section class="arc-section" aria-labelledby="arc-sel">
+        <h2 class="arc-heading" id="arc-sel">selected work</h2>
+        ${A.selected.map((g) => `
+          <div class="arc-group">
+            <h3 class="arc-group-title">${esc(g.heading)}</h3>
+            ${g.note ? `<p class="arc-note">${esc(g.note)}</p>` : ""}
+            <ul class="arc-links">${g.items.map((it) => `<li>${ext(it.url, it.title)}</li>`).join("")}</ul>
+          </div>`).join("")}
+      </section>
+
+      <section class="arc-section" aria-labelledby="arc-write">
+        <h2 class="arc-heading" id="arc-write">writing</h2>
+        <p class="arc-note">${esc(A.writing.line)}</p>
+        <p>${ext(A.writing.url, A.writing.label)}</p>
+      </section>
+    `;
   } else {
     // detail: render the one project matching data-slug
     const p = projects.find((x) => x.slug === slug);
