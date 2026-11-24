@@ -103,51 +103,101 @@ window.WORK.archive = {
     "i'm most excited when growth strategy, product thinking, and visual storytelling come together.",
   ],
 
+  /*
+    experience: newest first. each entry:
+      name      big yellow title. links to url if there is one.
+      url       main destination for the name ("" for none)
+      role, dates, place
+      about     one to three short paragraphs
+      points    achievements and metrics
+      links     [{ label, url }] shown as a small row
+      media     reserved for later: photos, videos, screenshots, case study,
+                articles. e.g. { type: "video", url: "...", caption: "..." }
+                nothing renders until you add something here.
+      caseStudy reserved for later: e.g. "/work/orb/" once the page is ready
+  */
   experience: [
     {
-      company: "made it desi",
+      name: "made it desi",
+      url: "https://www.madeitdesi.com/",
+      role: "creator, host & founder",
+      dates: "2025 to present",
       place: "",
-      role: "founder",
-      dates: "apr 2026 to present",
-      about: "a media and storytelling platform for the south asian diaspora. i direct the founder stories, interviews and launch films.",
-      points: [
-        "building season 3, shakti, centered on women founders and their journeys.",
+      about: [
+        "an independent film and storytelling project documenting desi founders, creators and people building something of their own.",
+        "i develop the stories, meet the people behind them, and bring their journeys to screen. season 3, shakti, focuses on women founders and their journeys.",
       ],
+      points: [],
+      links: [
+        { label: "website", url: "https://www.madeitdesi.com/" },
+        { label: "instagram", url: "https://www.instagram.com/madeitdesi/" },
+        { label: "youtube", url: "https://www.youtube.com/@madeitdesi/" },
+      ],
+      media: [],
+      caseStudy: "",
     },
     {
-      company: "mask network",
+      name: "mask network / firefly",
+      url: "https://www.mask.io/",
+      role: "growth product manager",
+      dates: "mar 2024 to 2026",
       place: "san francisco",
-      role: "growth marketing strategist",
-      dates: "mar 2024 to present",
-      points: [
-        "played a key role in evaluating and acquiring orb, integrating it into the mask ecosystem.",
-        "developed 40+ growth and go-to-market strategies across firefly, web.bio, and orb.",
-        "improved day-1 retention on firefly from 3% to 12%, growing mau from 300 to 2,000+.",
-        "built retention and lifecycle strategies that increased signups by 15%.",
+      about: [
+        "worked across firefly, web.bio and orb.club, shaping product strategy and growth.",
       ],
+      points: [
+        "evaluated and helped bring orb into the mask ecosystem.",
+        "wrote 40+ product requirement documents across activation, retention and engagement.",
+        "improved firefly day-1 retention from 3% to 12%.",
+        "grew monthly active users from ~300 to 2,000+.",
+      ],
+      links: [
+        { label: "mask network", url: "https://www.mask.io/" },
+        // couldn't verify a firefly website, so this is the official app store listing.
+        { label: "firefly", url: "https://apps.apple.com/app/id1640183078" },
+      ],
+      media: [],
+      caseStudy: "",
     },
     {
-      company: "orb technology",
+      name: "orb",
+      url: "https://orb.club/",
+      role: "co-founder, product & growth",
+      dates: "jul 2022 to sep 2023",
       place: "",
-      role: "co-founder",
-      dates: "jul 2022 to dec 2023",
-      points: [
-        "co-founded orb, a decentralized social platform, and raised $2.3m in funding.",
-        "scaled the platform from 0 to 70,000 users, and grew orb's twitter community organically from 0 to 30k followers.",
-        "led 30+ go-to-market initiatives and product launch videos.",
-        "worked across product, growth, and engagement, writing 20+ product requirement documents.",
+      about: [
+        "co-founded a decentralized social app built on lens protocol, and helped take it from an early idea to a funded startup and community.",
+        "orb was acquired by maskdao in june 2025.",
       ],
+      points: [
+        "raised $2.3m.",
+        "built a waitlist of 110k.",
+        "grew the discord community to 12k members.",
+        "led product strategy, go-to-market and growth.",
+      ],
+      links: [
+        { label: "website", url: "https://orb.club/" },
+        { label: "acquisition announcement", url: "https://masknetwork.medium.com/maskdao-acquires-orb-club-4e60950ee366" },
+      ],
+      media: [],
+      caseStudy: "",
     },
     {
-      company: "nudo films",
-      place: "new delhi",
-      role: "founding member / creative producer",
+      name: "nudo films",
+      // no verified nudo films website or channel yet. add it here when you have it.
+      url: "",
+      role: "founding member",
       dates: "jan 2019 to jul 2021",
-      about: "a new delhi production house making ads and brand films for names like g‑shock and under armour. i was on the founding team, taking work from pitch to final cut.",
+      place: "delhi, india",
+      about: [
+        "part of an independent film collective in delhi, working on filmmaking and storytelling before moving to the us for graduate school.",
+      ],
       points: [
         "led a team of 50+ people across 100+ video projects.",
-        "managed creative production and digital projects from concept to execution.",
       ],
+      links: [],
+      media: [],
+      caseStudy: "",
     },
   ],
 

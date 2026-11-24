@@ -24,15 +24,35 @@
 
       <section class="arc-section" aria-labelledby="arc-exp">
         <h2 class="arc-heading" id="arc-exp">experience</h2>
-        <div class="arc-exp-list">
-          ${A.experience.map((e) => `
-            <article class="arc-exp">
-              <h3 class="arc-company">${esc(e.company)}${e.place ? `<span class="arc-place">${esc(e.place)}</span>` : ""}</h3>
-              <p class="arc-role">${esc(e.role)} · ${esc(e.dates)}</p>
-              ${e.about ? `<p class="arc-about">${esc(e.about)}</p>` : ""}
-              <ul class="arc-points">${e.points.map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>
-            </article>`).join("")}
-        </div>
+        <ol class="tl">
+          ${A.experience.map((e, i) => {
+            const num = String(i + 1).padStart(2, "0");
+            const name = e.url
+              ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.name)}<span class="arc-arrow" aria-hidden="true">↗</span></a>`
+              : esc(e.name);
+            const meta = [e.role, e.dates, e.place].filter(Boolean).map(esc).join(" · ");
+            const media = (e.media || []).length
+              ? `<div class="tl-media">${e.media.map((m) => `<a class="tl-media-item" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.caption || m.type)}</a>`).join("")}</div>`
+              : "";
+            const links = [...(e.links || [])];
+            if (e.caseStudy) links.unshift({ label: "case study", url: e.caseStudy });
+            return `
+            <li class="tl-item">
+              <span class="tl-num" aria-hidden="true">${num}</span>
+              <article>
+                <h3 class="tl-name">${name}</h3>
+                <p class="tl-meta">${meta}</p>
+                ${(e.about || []).map((p) => `<p class="tl-about">${esc(p)}</p>`).join("")}
+                ${e.points && e.points.length ? `<ul class="arc-points">${e.points.map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>` : ""}
+                ${media}
+                ${links.length ? `<p class="tl-links">${links.map((l) => {
+                  const external = /^https?:\/\//.test(l.url);
+                  return `<a href="${esc(l.url)}"${external ? ' target="_blank" rel="noopener"' : ""}>${esc(l.label)}<span class="arc-arrow" aria-hidden="true">↗</span></a>`;
+                }).join("")}</p>` : ""}
+              </article>
+            </li>`;
+          }).join("")}
+        </ol>
       </section>
 
       <section class="arc-section" aria-labelledby="arc-sel">
