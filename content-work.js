@@ -220,8 +220,7 @@ window.WORK.archive = {
       items: [
         { title: "changing the future: angad daryani", youtube: "X7GyQyFZim0", url: "https://www.youtube.com/watch?v=X7GyQyFZim0" },
         { title: "this 20 year old is decentralizing human intelligence", youtube: "hI0r-qHtjQg", url: "https://www.youtube.com/watch?v=hI0r-qHtjQg" },
-        // placeholder: paste the real youtube link as youtube: "VIDEO_ID" once you have it
-        { title: "another founder story", url: "https://t.co/q41nSIBZWP", needsEmbed: true },
+        { title: "nilesh rathore", youtube: "p2OdgQlevG0", url: "https://www.youtube.com/watch?v=p2OdgQlevG0" },
       ],
     },
     {
