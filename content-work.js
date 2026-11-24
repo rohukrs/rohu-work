@@ -57,15 +57,17 @@ window.WORK = {
     {
       slug: "made-it-desi",
       title: "made it desi",
-      meta: "creator & host, ongoing",
-      summary: "a film and storytelling project spotlighting desi founders and creators.",
+      meta: "creator & host, full-time",
+      summary: "a film and storytelling project telling authentic stories of desi founders and builders.",
       story: [
         "[add a sentence or two on why you started made it desi]",
-        "developing stories, interviews and community around desi founders and creators. currently building season 3, shakti, centered on women founders and their journeys.",
+        "working on made it desi full-time — developing stories, interviews and community around desi founders and creators. currently building season 3, shakti, centered on women founders and their journeys.",
       ],
       outcomes: ["season 3, shakti — in development"],
       links: [
         { label: "instagram", url: "https://www.instagram.com/madeitdesi/" },
+        { label: "launch video", url: "https://x.com/rohukrs/status/2063297403210662137" },
+        { label: "founder story", url: "https://www.youtube.com/watch?v=X7GyQyFZim0" },
       ],
     },
     {
