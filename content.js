@@ -27,7 +27,7 @@ window.SITE = {
       // no separate page yet — this is the homepage's own section.
       page: "/",
       description:
-        "a little bit of everything. the people, places and small moments that make up a life.",
+        "i love to hear stories and cover them on my camera. if you know anyone in this world who has a story that needs to be told, just mail me or tell me. i look at every message and every email. apparently, not a lot of people email you personally.",
       cta: null,
     },
     {
@@ -57,7 +57,8 @@ window.SITE = {
 
   quickLinks: [
     { label: "linkedin ↗", href: "https://www.linkedin.com/in/rohit-kumar-0443b3183/" },
-    { label: "made it desi ↗", href: "https://www.instagram.com/madeitdesi/" },
+    { label: "instagram ↗", href: "https://instagram.com/rohukrs" },
+    { label: "made it desi ↗", href: "https://instagram.com/madeitdesi" },
     { label: "email ↗", href: "mailto:workwithrohitkr@gmail.com" },
   ],
 };

@@ -97,6 +97,7 @@ a { color: inherit; }
   width: max-content;
   white-space: nowrap;
   color: var(--fg2);
+  letter-spacing: 0.01em; /* a touch more open than "rohu", so it reads as its own word */
   padding-right: 0.12em;
 }
 
@@ -125,10 +126,19 @@ a { color: inherit; }
   bottom: 24px; left: 3.8vw; right: 3.8vw;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   color: rgba(255, 198, 107, 0.65);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.site-footer-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  text-align: right;
 }
 
 a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; border-radius: 6px; }
@@ -153,7 +163,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   .nav button { font-size: 11px; padding: 7px 11px; }
   .section-content { margin-top: 22px; }
   .quick-links { margin-top: 24px; gap: 16px; }
-  .site-footer { left: 22px; right: 22px; bottom: 17px; font-size: 9px; }
+  .site-footer {
+    left: 22px; right: 22px; bottom: 17px; font-size: 9px;
+    flex-direction: column; align-items: flex-start; gap: 10px;
+  }
+  .site-footer-lines { align-items: flex-start; text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
