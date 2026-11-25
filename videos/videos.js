@@ -2,10 +2,10 @@
 // leave youtube as "" until you have the link: the tile shows a placeholder.
 (function () {
   const videos = [
-    { title: "dal chawal aur ghar", youtube: "" },
-    { title: "founder's dilemma", youtube: "" },
-    { title: "job search", youtube: "" },
-    { title: "art of slowing", youtube: "" },
+    { title: "dal chawal aur ghar", youtube: "ra-BDbwOEiU" },
+    { title: "founder's dilemma", youtube: "IelUUgbtQDE" },
+    { title: "job search", youtube: "sLjThlIQFUo" },
+    { title: "art of slowing", youtube: "mSlwkosYW7U" },
   ];
 
   const esc = (s) => { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; };
