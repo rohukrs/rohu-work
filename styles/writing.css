@@ -1,0 +1,254 @@
+/*
+  Import this stylesheet from your existing app/globals.css:
+  @import "../styles/writing.css";
+
+  All selectors are scoped to .writing-page so the rest of the site
+  keeps its current design.
+*/
+
+.writing-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #171717;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.writing-nav {
+  width: min(100% - 48px, 1100px);
+  margin: 0 auto;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid #ededed;
+}
+
+.writing-nav a,
+.writing-rss,
+.essay-back,
+.essay-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.writing-nav-home {
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.07em;
+}
+
+.writing-nav nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 13px;
+}
+
+.writing-nav nav a,
+.writing-rss,
+.essay-back,
+.essay-footer a {
+  color: #666;
+}
+
+.writing-nav a:hover,
+.writing-rss:hover,
+.essay-back:hover,
+.essay-footer a:hover {
+  color: #111;
+}
+
+.writing-index,
+.essay {
+  width: min(100% - 48px, 650px);
+  margin: 0 auto;
+}
+
+.writing-index {
+  padding: clamp(76px, 13vh, 140px) 0 100px;
+}
+
+.writing-kicker {
+  margin: 0 0 18px;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.writing-index h1 {
+  margin: 0 0 52px;
+  font-size: clamp(42px, 8vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+  font-weight: 750;
+}
+
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.writing-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 1px solid #ededed;
+}
+
+.writing-list li:first-child {
+  border-top: 1px solid #ededed;
+}
+
+.writing-list a {
+  color: #171717;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+}
+
+.writing-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.writing-list time,
+.essay-header time {
+  flex: 0 0 auto;
+  color: #888;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.writing-empty {
+  color: #777;
+  line-height: 1.7;
+}
+
+.writing-rss {
+  display: inline-block;
+  margin-top: 34px;
+  font-size: 12px;
+}
+
+.essay {
+  padding: 58px 0 100px;
+}
+
+.essay-back {
+  display: inline-block;
+  margin-bottom: 64px;
+  font-size: 13px;
+}
+
+.essay-header {
+  margin-bottom: 48px;
+}
+
+.essay-header h1 {
+  margin: 0 0 18px;
+  font-size: clamp(38px, 7vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.07em;
+  font-weight: 750;
+}
+
+.essay-body {
+  font-size: 18px;
+  line-height: 1.85;
+  letter-spacing: -0.012em;
+  overflow-wrap: anywhere;
+}
+
+.essay-body p {
+  margin: 0 0 1.65em;
+}
+
+.essay-body h2,
+.essay-body h3 {
+  margin: 2.2em 0 0.8em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
+.essay-body h2 { font-size: 28px; }
+.essay-body h3 { font-size: 22px; }
+
+.essay-body a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #999;
+  text-underline-offset: 4px;
+}
+
+.essay-body strong { font-weight: 700; }
+.essay-body em { font-style: italic; }
+
+.essay-body blockquote {
+  margin: 2em 0;
+  padding-left: 20px;
+  border-left: 2px solid #d4d4d4;
+  color: #666;
+}
+
+.essay-body ul,
+.essay-body ol {
+  margin: 0 0 1.65em;
+  padding-left: 1.4em;
+}
+
+.essay-body li { margin: 0.45em 0; }
+
+.essay-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2.2em auto;
+}
+
+.essay-body hr {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  margin: 3em 0;
+}
+
+.essay-footer {
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid #ededed;
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .writing-nav {
+    width: min(100% - 36px, 650px);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .writing-nav nav { gap: 16px; }
+
+  .writing-index,
+  .essay {
+    width: min(100% - 36px, 650px);
+  }
+
+  .writing-list li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .essay { padding-top: 38px; }
+  .essay-back { margin-bottom: 48px; }
+  .essay-body { font-size: 17px; line-height: 1.8; }
+}

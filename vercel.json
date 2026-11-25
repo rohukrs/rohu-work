@@ -1,0 +1,4 @@
+{
+  "buildCommand": "node scripts/build-writings.mjs",
+  "outputDirectory": "_site"
+}
