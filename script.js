@@ -61,7 +61,7 @@
     b.type = "button";
     b.textContent = m.label;
     b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
-    b.addEventListener("click", () => select(i));
+    b.addEventListener("click", () => (m.goTo ? (window.location.href = m.page) : select(i)));
     nav.appendChild(b);
   });
 
