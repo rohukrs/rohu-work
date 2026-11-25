@@ -39,8 +39,8 @@ window.SITE = {
     },
     {
       label: "write",
-      // not built yet — points home until /write/ exists.
-      page: "/",
+      page: "/writings/",
+      goTo: true,
       description:
         "essays, observations, lessons from building things and unfinished thoughts. a place for ideas that deserve more than a social post.",
       cta: null,
