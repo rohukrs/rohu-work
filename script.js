@@ -20,10 +20,7 @@
 
   function renderSection(i) {
     const m = S.menu[i];
-    const workMount = document.getElementById("work-mount");
-    if (workMount) workMount.hidden = !m.inline;
     quickLinks.hidden = m.label !== "life";
-    document.body.classList.toggle("inline-open", !!m.inline);
     const paragraphs = m.description
       .split("\n")
       .map((line) => `<p class="description">${line}</p>`)
@@ -65,13 +62,83 @@
     }, 760);
   }
 
+  // the side panel: work and videos move their content in, life and email get their own
+  const panel = document.getElementById("panel");
+  const panelBody = document.getElementById("panelBody");
+  const workMount = document.getElementById("work-mount");
+  const videosMount = document.getElementById("videos-mount");
+  let openIndex = null;
+
+  function esc(s) {
+    const d = document.createElement("div");
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function showPanel(i) {
+    const m = S.menu[i];
+    panelBody.innerHTML = "";
+    workMount.hidden = true;
+    videosMount.hidden = true;
+
+    if (m.inline === true) {
+      workMount.hidden = false;
+      panelBody.appendChild(workMount);
+    } else if (m.inline === "videos") {
+      videosMount.hidden = false;
+      panelBody.appendChild(videosMount);
+    } else if (m.label === "email") {
+      const a = m.cta.href;
+      panelBody.innerHTML = `
+        <h2 class="panel-title">email</h2>
+        <p class="panel-text">send me a note, any time.</p>
+        <a class="panel-mail" href="${esc(a)}">${esc(m.cta.label.replace(" ↗", ""))}</a>
+        <button class="panel-copy" id="panelCopy" type="button">copy address</button>`;
+      document.getElementById("panelCopy").addEventListener("click", (e) => {
+        navigator.clipboard?.writeText(m.cta.label.replace(" ↗", ""));
+        e.currentTarget.textContent = "copied";
+      });
+    } else {
+      panelBody.innerHTML = `<h2 class="panel-title">${esc(m.label)}</h2>` +
+        m.description.split("\n").map((line) => `<p class="panel-text">${esc(line)}</p>`).join("");
+    }
+
+    panel.hidden = false;
+    document.body.classList.add("panel-open");
+    openIndex = i;
+  }
+
+  function closePanel() {
+    panel.hidden = true;
+    document.body.classList.remove("panel-open");
+    workMount.hidden = true;
+    videosMount.hidden = true;
+    document.body.appendChild(workMount);
+    document.body.appendChild(videosMount);
+    openIndex = null;
+  }
+
+  function openTab(i) {
+    if (openIndex === i) {          // the active tab closes its panel
+      closePanel();
+      return;
+    }
+    select(i);
+    showPanel(i);
+  }
+
+  document.getElementById("panelClose").addEventListener("click", closePanel);
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && openIndex !== null) closePanel();
+  });
+
   // build nav pills
   S.menu.forEach((m, i) => {
     const b = document.createElement("button");
     b.type = "button";
     b.textContent = m.label;
     b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
-    b.addEventListener("click", () => (m.goTo ? (window.location.href = m.page) : select(i)));
+    b.addEventListener("click", () => openTab(i));
     nav.appendChild(b);
   });
 
@@ -92,7 +159,7 @@
   window.addEventListener(
     "wheel",
     (e) => {
-      if (S.menu[current].inline) return;
+      if (document.body.classList.contains("panel-open")) return;
       e.preventDefault();
       const now = Date.now();
       acc += e.deltaY;

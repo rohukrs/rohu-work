@@ -41,7 +41,7 @@ window.SITE = {
     {
       label: "videos",
       page: "/videos/",
-      goTo: true,
+      inline: "videos",
       description:
         "films, founder stories, interviews and experiments in moving images. selected work and stories from made it desi.",
       cta: { label: "watch made it desi on instagram ↗", href: "https://www.instagram.com/madeitdesi/" },
