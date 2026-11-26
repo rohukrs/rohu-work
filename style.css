@@ -200,9 +200,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 
 .mh-photo-link { flex: none; line-height: 0; }
 .mh-photo {
-  width: 90px;
-  height: 50px;
-  object-fit: cover;
+  width: 64px;
+  height: auto;
   border-radius: 2px;
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.08));
 }
