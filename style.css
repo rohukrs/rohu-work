@@ -706,3 +706,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   .arc-heading { margin-bottom: 20px; }
   .arc-intro p:not(:first-of-type) { font-size: 17px; }
 }
+
+/* ---- videos: subscribe on youtube, the only external link in this section ---- */
+.yt-subscribe {
+  display: inline-block; margin-top: 18px; padding-bottom: 2px;
+  font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+  color: var(--fg); text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.yt-subscribe:hover { opacity: 0.8; }
+.yt-subscribe .arc-arrow { color: var(--fg); }

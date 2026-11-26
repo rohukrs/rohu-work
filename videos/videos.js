@@ -29,6 +29,7 @@
     <section class="arc-section sel-top">
       <h1 class="page-title">videos</h1>
       <p class="arc-note">films, experiments and stories in moving images.</p>
+      <a class="yt-subscribe" href="https://www.youtube.com/rohukrs" target="_blank" rel="noopener">subscribe on youtube <span class="arc-arrow" aria-hidden="true">↗</span></a>
       <div class="vgrid">${videos.map(tile).join("")}</div>
     </section>`;
 })();
