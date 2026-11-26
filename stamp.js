@@ -74,8 +74,20 @@
     schedule();
   }
 
-  function onTap() {
+  function onTap(e) {
     if (reduce.matches) return;
+
+    // a small heart floats up from where the stamp was tapped
+    const r = wrap.getBoundingClientRect();
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.setAttribute("aria-hidden", "true");
+    heart.textContent = "❤️";
+    heart.style.left = (e.clientX - r.left) + "px";
+    heart.style.top = (e.clientY - r.top) + "px";
+    wrap.appendChild(heart);
+    heart.addEventListener("animationend", () => heart.remove());
+
     wrap.classList.remove("is-surprised");
     void wrap.offsetWidth; // restart the animation on repeat taps
     wrap.classList.add("is-surprised");
