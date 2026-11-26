@@ -121,6 +121,11 @@
   }
 
   function openTab(i) {
+    if (S.menu[i].label === "life") {  // life is a homepage state: centered hero, no panel
+      closePanel();
+      select(i);
+      return;
+    }
     if (openIndex === i) {          // the active tab closes its panel
       closePanel();
       return;
