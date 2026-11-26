@@ -538,3 +538,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .essay-list li { display: flex; justify-content: space-between; gap: 18px; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
 .essay-list a { color: #f5c96b; text-decoration: none; }
 .essay-list time { opacity: 0.6; font-size: 13px; white-space: nowrap; }
+
+#work-mount[hidden] { display: none !important; }
+#work-mount { padding: 56px 22px 90px; max-width: 980px; margin: 0 auto; }

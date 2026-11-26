@@ -20,6 +20,10 @@
 
   function renderSection(i) {
     const m = S.menu[i];
+    const workMount = document.getElementById("work-mount");
+    if (workMount) workMount.hidden = !m.inline;
+    quickLinks.hidden = m.label !== "life";
+    document.body.classList.toggle("inline-open", !!m.inline);
     const paragraphs = m.description
       .split("\n")
       .map((line) => `<p class="description">${line}</p>`)
@@ -30,7 +34,7 @@
         ? `<ul class="essay-list">${list.map((e) => `<li><a href="/${e.slug}">${e.title.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</a><time datetime="${e.date}">${e.date}</time></li>`).join("")}</ul>`
         : `<p class="description">nothing here yet. check back soon.</p>`
       : "";
-    const cta = m.cta
+    const cta = m.cta && !m.inline
       ? `<p class="description"><a class="inline-link" href="${m.cta.href}" target="${/^https?:\/\//.test(m.cta.href) ? "_blank" : "_self"}" rel="noopener">${m.cta.label}</a></p>`
       : "";
     content.innerHTML = paragraphs + essays + cta;
@@ -88,6 +92,7 @@
   window.addEventListener(
     "wheel",
     (e) => {
+      if (S.menu[current].inline) return;
       e.preventDefault();
       const now = Date.now();
       acc += e.deltaY;
@@ -105,7 +110,7 @@
   let ty = null;
   window.addEventListener("touchstart", (e) => { ty = e.touches[0].clientY; }, { passive: true });
   window.addEventListener("touchend", (e) => {
-    if (ty === null) return;
+    if (ty === null || S.menu[current].inline) return;
     const dy = ty - e.changedTouches[0].clientY;
     if (Math.abs(dy) > 35) select(current + (dy > 0 ? 1 : -1));
     ty = null;

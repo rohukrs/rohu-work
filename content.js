@@ -33,17 +33,10 @@ window.SITE = {
     {
       label: "work",
       page: "/work/",
+      inline: true,
       description:
         "i build products, grow communities and tell stories. a mix of product thinking, startup building and creative work.",
       cta: { label: "see full work ↗", href: "/work/" },
-    },
-    {
-      label: "write",
-      page: "/",
-      essays: true,
-      description:
-        "essays, observations, lessons from building things and unfinished thoughts. a place for ideas that deserve more than a social post.",
-      cta: null,
     },
     {
       label: "videos",
@@ -59,6 +52,6 @@ window.SITE = {
     { label: "linkedin ↗", href: "https://www.linkedin.com/in/rohit-kumar-0443b3183/" },
     { label: "instagram ↗", href: "https://instagram.com/rohukrs" },
     { label: "made it desi ↗", href: "https://instagram.com/madeitdesi" },
-    { label: "email ↗", href: "mailto:workwithrohitkr@gmail.com" },
+    { label: "workwithrohitkr@gmail.com ↗", href: "mailto:workwithrohitkr@gmail.com" },
   ],
 };

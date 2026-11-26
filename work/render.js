@@ -37,8 +37,7 @@
     };
 
     mount.innerHTML = `
-      <section class="arc-section sel-top" aria-labelledby="arc-sel">
-        <h1 class="page-title" id="arc-sel">selected work</h1>
+      <section class="arc-section sel-top">
         ${A.selected.map((g) => `
           <div class="arc-group">
             <h2 class="arc-group-title">${esc(g.heading)}</h2>
