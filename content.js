@@ -27,7 +27,7 @@ window.SITE = {
       // no separate page yet — this is the homepage's own section.
       page: "/",
       description:
-        "hello, i'm rohu.\nI build things, make films, and collect stories from interesting people.\nCurrently somewhere between product, technology, filmmaking and figuring out what comes next.",
+        "i love to hear stories and cover them on my camera. if you know anyone in this world who has a story that needs to be told, just mail me or tell me. i look at every message and every email. apparently, not a lot of people email you personally.",
       cta: null,
     },
     {
