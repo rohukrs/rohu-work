@@ -46,12 +46,17 @@ window.SITE = {
         "films, founder stories, interviews and experiments in moving images. selected work and stories from made it desi.",
       cta: { label: "watch made it desi on instagram ↗", href: "https://www.instagram.com/madeitdesi/" },
     },
+    {
+      label: "email",
+      page: "/",
+      description: "",
+      cta: { label: "workwithrohitkr@gmail.com ↗", href: "mailto:workwithrohitkr@gmail.com" },
+    },
   ],
 
   quickLinks: [
     { label: "linkedin ↗", href: "https://www.linkedin.com/in/rohit-kumar-0443b3183/" },
     { label: "instagram ↗", href: "https://instagram.com/rohukrs" },
     { label: "made it desi ↗", href: "https://instagram.com/madeitdesi" },
-    { label: "workwithrohitkr@gmail.com ↗", href: "mailto:workwithrohitkr@gmail.com" },
   ],
 };
