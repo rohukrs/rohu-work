@@ -12,7 +12,7 @@
   }
 
   if (!slug) {
-    // index: selected work first, then experience / resume, then writing.
+    // index: what i do, then videos, then resume.
     const A = window.WORK.archive;
     const ext = (url, label) =>
       `<a class="arc-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}<span class="arc-arrow" aria-hidden="true">↗</span></a>`;
@@ -37,7 +37,13 @@
     };
 
     mount.innerHTML = `
-      <section class="arc-section sel-top">
+      <section class="arc-section arc-intro" aria-labelledby="arc-what">
+        <h2 class="arc-heading" id="arc-what">what i do</h2>
+        ${A.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
+      </section>
+
+      <section class="arc-section sel-top" aria-label="videos">
+        <h2 class="arc-heading">videos</h2>
         ${A.selected.map((g) => `
           <div class="arc-group">
             <h2 class="arc-group-title">${esc(g.heading)}</h2>
@@ -47,7 +53,7 @@
       </section>
 
       <section class="arc-section" aria-labelledby="arc-exp">
-        <h2 class="arc-heading" id="arc-exp">experience / resume</h2>
+        <h2 class="arc-heading" id="arc-exp">resume</h2>
         <ol class="tl">
           ${A.experience.map((e, i) => {
             const num = String(i + 1).padStart(2, "0");
@@ -79,15 +85,6 @@
         </ol>
       </section>
 
-      <section class="arc-section arc-intro" aria-label="about">
-        ${A.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
-      </section>
-
-      <section class="arc-section" aria-labelledby="arc-write">
-        <h2 class="arc-heading" id="arc-write">writing</h2>
-        <p class="arc-note">${esc(A.writing.line)}</p>
-        <p>${ext(A.writing.url, A.writing.label)}</p>
-      </section>
     `;
   } else {
     // detail: render the one project matching data-slug
