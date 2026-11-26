@@ -640,6 +640,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 @keyframes heartRise {
   0% { opacity: 0; transform: translate(-50%, -30%) scale(0.5); }
   15% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-  100% { opacity: 0; transform: translate(-50%, -160%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -110%) scale(1); }
 }
-@media (prefers-reduced-motion: reduce) { .heart { display: none; } }
+@media (prefers-reduced-motion: reduce) { .heart { animation: none; opacity: 1; transform: translate(-50%, -110%); } }

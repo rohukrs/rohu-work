@@ -74,10 +74,20 @@
     schedule();
   }
 
-  function onTap(e) {
-    if (reduce.matches) return;
+  // says "faa" out loud with the browser's own voice (no audio file needed)
+  function say() {
+    if (!("speechSynthesis" in window)) return;
+    const u = new SpeechSynthesisUtterance("faa");
+    u.rate = 0.8;
+    u.pitch = 1.6;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  }
 
-    // a small heart floats up from where the stamp was tapped
+  function onTap(e) {
+    say();
+
+    // a heart floats up from the tap and stays on the stamp
     const r = wrap.getBoundingClientRect();
     const heart = document.createElement("span");
     heart.className = "heart";
@@ -86,8 +96,10 @@
     heart.style.left = (e.clientX - r.left) + "px";
     heart.style.top = (e.clientY - r.top) + "px";
     wrap.appendChild(heart);
-    heart.addEventListener("animationend", () => heart.remove());
+    const hearts = wrap.querySelectorAll(".heart");
+    if (hearts.length > 30) hearts[0].remove(); // keep it tidy
 
+    if (reduce.matches) return;
     wrap.classList.remove("is-surprised");
     void wrap.offsetWidth; // restart the animation on repeat taps
     wrap.classList.add("is-surprised");
