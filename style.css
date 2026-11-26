@@ -655,13 +655,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 }
 .panel[hidden] { display: none; }
 @keyframes panelIn { from { opacity: 0; } to { opacity: 1; } }
-.panel-close {
-  position: absolute; top: 4.2vh; right: 3.8vw;
-  border: 1px solid rgba(255, 198, 107, 0.38); border-radius: 999px;
-  color: rgba(255, 198, 107, 0.75); background: none;
-  padding: 6px 12px; font-size: 11px; letter-spacing: 0.05em; cursor: pointer;
-}
-.panel-close:hover { color: var(--fg); border-color: var(--fg); }
 .panel-title { font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.05em; line-height: 1; margin-bottom: 18px; }
 .panel-text { font-size: 15px; font-weight: 500; line-height: 1.6; color: #f7dba8; max-width: 46ch; margin-top: 10px; }
 .panel-mail { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--fg); }

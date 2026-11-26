@@ -98,6 +98,8 @@
         navigator.clipboard?.writeText(m.cta.label.replace(" ↗", ""));
         e.currentTarget.textContent = "copied";
       });
+    } else if (m.label === "life") {
+      panelBody.innerHTML = "";
     } else {
       panelBody.innerHTML = `<h2 class="panel-title">${esc(m.label)}</h2>` +
         m.description.split("\n").map((line) => `<p class="panel-text">${esc(line)}</p>`).join("");
@@ -127,7 +129,6 @@
     showPanel(i);
   }
 
-  document.getElementById("panelClose").addEventListener("click", closePanel);
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && openIndex !== null) closePanel();
   });
