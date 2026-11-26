@@ -147,7 +147,6 @@ function nav() {
   <a class="writing-nav-home" href="/">rohu</a>
   <nav aria-label="main navigation">
     <a href="/">home</a>
-    <a href="/writings">writings</a>
     <a href="https://www.youtube.com/@rohukrs" target="_blank" rel="noopener">youtube ↗</a>
     <a href="https://www.instagram.com/rohukrs/" target="_blank" rel="noopener">instagram ↗</a>
   </nav>
@@ -221,19 +220,8 @@ function build() {
   for (const d of COPY_DIRS) fs.cpSync(path.join(ROOT, d), path.join(OUT, d), { recursive: true });
   fs.copyFileSync(path.join(ROOT, "styles", "writing.css"), path.join(OUT, "writing.css"));
 
-  // 3. /writings/ index
-  const rows = posts.map((p) => `    <li><a href="/${p.slug}">${esc(p.title)}</a><time datetime="${p.date}">${fmtDate(p.date)}</time></li>`).join("\n");
-  fs.mkdirSync(path.join(OUT, "writings"), { recursive: true });
-  fs.writeFileSync(path.join(OUT, "writings", "index.html"), page({
-    title: "writings — rohu",
-    description: "essays, observations, lessons from building things and unfinished thoughts.",
-    canonical: `${SITE_URL}/writings`,
-    body: `<section class="writing-index">
-  <h1>writings</h1>
-  ${posts.length ? `<ul class="writing-list">\n${rows}\n  </ul>` : `<p class="writing-empty">nothing here yet. check back soon.</p>`}
-  <a class="writing-rss" href="/rss.xml">rss feed ↗</a>
-</section>`,
-  }));
+  // 3. essays.js: the list the homepage "write" section reads (no separate index page)
+  fs.writeFileSync(path.join(OUT, "essays.js"), `window.ESSAYS = ${JSON.stringify(posts.map((p) => ({ title: p.title, date: p.date, slug: p.slug })))};\n`);
 
   // 4. one page per essay
   for (const p of posts) {
@@ -244,7 +232,7 @@ function build() {
       canonical: `${SITE_URL}/${p.slug}`,
       type: "article",
       body: `<article class="essay">
-  <a class="essay-back" href="/writings">← all writings</a>
+  <a class="essay-back" href="/">← home</a>
   <header class="essay-header">
     <h1>${esc(p.title)}</h1>
     <time datetime="${p.date}">${fmtDate(p.date)}</time>
@@ -252,7 +240,7 @@ function build() {
   <div class="essay-body">
 ${p.html}
   </div>
-  <footer class="essay-footer"><a href="/writings">← back to writings</a></footer>
+  <footer class="essay-footer"><a href="/">← home</a></footer>
 </article>`,
     }));
   }
@@ -269,7 +257,7 @@ ${p.html}
 <rss version="2.0">
   <channel>
     <title>rohu — writings</title>
-    <link>${SITE_URL}/writings</link>
+    <link>${SITE_URL}/</link>
     <description>essays, observations, lessons from building things and unfinished thoughts.</description>
 ${items}
   </channel>
@@ -277,7 +265,7 @@ ${items}
 `);
 
   // 6. sitemap
-  const urls = ["/", "/writings", "/work/", "/videos/", ...posts.map((p) => `/${p.slug}`)]
+  const urls = ["/", "/work/", "/videos/", ...posts.map((p) => `/${p.slug}`)]
     .map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join("\n");
   fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -24,10 +24,16 @@
       .split("\n")
       .map((line) => `<p class="description">${line}</p>`)
       .join("");
+    const list = window.ESSAYS || [];
+    const essays = m.essays
+      ? list.length
+        ? `<ul class="essay-list">${list.map((e) => `<li><a href="/${e.slug}">${e.title.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</a><time datetime="${e.date}">${e.date}</time></li>`).join("")}</ul>`
+        : `<p class="description">nothing here yet. check back soon.</p>`
+      : "";
     const cta = m.cta
       ? `<p class="description"><a class="inline-link" href="${m.cta.href}" target="${/^https?:\/\//.test(m.cta.href) ? "_blank" : "_self"}" rel="noopener">${m.cta.label}</a></p>`
       : "";
-    content.innerHTML = paragraphs + cta;
+    content.innerHTML = paragraphs + essays + cta;
   }
 
   function setRows() {

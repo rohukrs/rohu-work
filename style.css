@@ -533,3 +533,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .vid-plain { min-width: 0; }
 .vid-plain .arc-link { overflow-wrap: anywhere; }
 .sel-top .page-title { font-size: clamp(44px, 7.5vw, 76px); white-space: nowrap; }
+
+.essay-list { list-style: none; margin: 18px 0 0; padding: 0; max-width: 520px; }
+.essay-list li { display: flex; justify-content: space-between; gap: 18px; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+.essay-list a { color: #f5c96b; text-decoration: none; }
+.essay-list time { opacity: 0.6; font-size: 13px; white-space: nowrap; }
