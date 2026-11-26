@@ -15,7 +15,7 @@ const OUT = path.join(ROOT, "_site");
 const SITE_URL = "https://rohu.work";
 
 // site files and folders copied into _site/ as they are
-const COPY_FILES = ["index.html", "style.css", "content.js", "content-work.js", "partial.js", "script.js"];
+const COPY_FILES = ["index.html", "style.css", "content.js", "content-work.js", "partial.js", "script.js", "stamp.js"];
 const COPY_DIRS = ["assets", "work", "videos"];
 
 // names the site already uses, so an essay can't take them as its slug
