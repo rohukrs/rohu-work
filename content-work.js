@@ -56,12 +56,12 @@ window.WORK = {
     },
     {
       slug: "made-it-desi",
-      title: "made it desi",
+      title: "madeitdesi",
       meta: "founder, apr 2026 to present",
       summary: "a film and storytelling project telling authentic stories of desi founders and builders.",
       story: [
-        "[add a sentence or two on why you started made it desi]",
-        "working on made it desi full-time — developing stories, interviews and community around desi founders and creators. currently building season 3, shakti, centered on women founders and their journeys.",
+        "[add a sentence or two on why you started madeitdesi]",
+        "working on madeitdesi full-time — developing stories, interviews and community around desi founders and creators. currently building season 3, shakti, centered on women founders and their journeys.",
       ],
       outcomes: ["season 3, shakti — in development"],
       links: [
@@ -99,7 +99,7 @@ window.WORK.archive = {
   intro: [
     "i work at the intersection of product, growth, and storytelling.",
     "over the last 8+ years, i've built and scaled consumer startups, led growth for onchain social products, and directed films, ads, and founder stories.",
-    "i co-founded a tech startup in 2023, helped scale it to tens of thousands of users, and have worked in growth roles at startups in san francisco. alongside this, i'm building made it desi, a video project telling authentic stories of desi founders and builders.",
+    "i co-founded a tech startup in 2023, helped scale it to tens of thousands of users, and have worked in growth roles at startups in san francisco. alongside this, i'm building madeitdesi, a video project telling authentic stories of desi founders and builders.",
     "i'm most excited when growth strategy, product thinking, and visual storytelling come together.",
   ],
 
@@ -118,13 +118,13 @@ window.WORK.archive = {
   */
   experience: [
     {
-      name: "made it desi",
+      name: "madeitdesi",
       url: "https://www.madeitdesi.com/",
       role: "creator & host · founder",
       dates: "2025 to present",
       place: "",
       about: [
-        "made it desi is an independent storytelling project documenting desi founders, creators, and people who have left home to build something of their own. through films and conversations, i explore the people behind the ideas, their journeys, failures, and the moments that shaped them.",
+        "madeitdesi is an independent storytelling project documenting desi founders, creators, and people who have left home to build something of their own. through films and conversations, i explore the people behind the ideas, their journeys, failures, and the moments that shaped them.",
         "season 3, shakti, spotlights women founders and their stories.",
       ],
       points: [],
@@ -207,16 +207,16 @@ window.WORK.archive = {
       note: "",
       items: [
         { title: "founder launch video, frontrunner", url: "https://www.linkedin.com/posts/mayanayyar_we-got-into-y-combinator-frontrunner-more-activity-7503464797250846721-vKlF" },
-        { title: "startup introduction videos, made it desi", url: "https://x.com/rohukrs/status/2085978534569521593" },
+        { title: "startup introduction videos, madeitdesi", url: "https://x.com/rohukrs/status/2085978534569521593" },
         { title: "firefly product launch", url: "https://x.com/thefireflyapp/status/1874908004404859357" },
-        { title: "made it desi launch video", url: "https://x.com/rohukrs/status/2063297403210662137" },
+        { title: "madeitdesi launch video", url: "https://x.com/rohukrs/status/2063297403210662137" },
         { title: "emergent labs hq product launch", url: "https://x.com/ycombinator/status/1927409468956193085" },
         { title: "more selected work", url: "https://x.com/rohukrs/status/2015830606463271337" },
       ],
     },
     {
       heading: "founder stories & interviews",
-      note: "made it desi. meeting people, hearing their stories, turning them into films.",
+      note: "madeitdesi. meeting people, hearing their stories, turning them into films.",
       items: [
         { title: "changing the future: angad daryani", youtube: "X7GyQyFZim0", url: "https://www.youtube.com/watch?v=X7GyQyFZim0" },
         { title: "this 20 year old is decentralizing human intelligence", youtube: "hI0r-qHtjQg", url: "https://www.youtube.com/watch?v=hI0r-qHtjQg" },

@@ -740,3 +740,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   .panel { display: flex; flex-direction: column; padding-top: 9vh; padding-bottom: 7vh; }
   .panel-body { margin: auto 0; width: 100%; }
 }
+
+/* ---- footer/social links: socials on one row, email on its own line beneath ---- */
+.quick-links { flex-wrap: wrap; gap: 12px 24px; }
+.quick-links a[href^="mailto:"] { flex-basis: 100%; }
+@media (max-width: 650px) { .quick-links { flex-wrap: wrap; } }
