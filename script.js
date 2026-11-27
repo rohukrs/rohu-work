@@ -189,7 +189,7 @@
     else if (e.key === "ArrowUp") { e.preventDefault(); select(current - 1); }
   });
 
-  window.addEventListener("resize", () => { if (!busy) setRows(); });
+  window.addEventListener("resize", () => setRows());
 
   renderSection(0);
   setRows();
