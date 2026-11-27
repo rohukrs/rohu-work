@@ -89,15 +89,12 @@
       panelBody.appendChild(videosMount);
     } else if (m.label === "email") {
       const a = m.cta.href;
+      const shown = m.cta.label.replace(" ↗", "");
       panelBody.innerHTML = `
         <h2 class="panel-title">email</h2>
-        <p class="panel-text">send me a note, any time.</p>
-        <a class="panel-mail" href="${esc(a)}">${esc(m.cta.label.replace(" ↗", ""))}</a>
-        <button class="panel-copy" id="panelCopy" type="button">copy address</button>`;
-      document.getElementById("panelCopy").addEventListener("click", (e) => {
-        navigator.clipboard?.writeText(m.cta.label.replace(" ↗", ""));
-        e.currentTarget.textContent = "copied";
-      });
+        <p class="panel-text">send me an email if you're still figuring out a part of life that i don't know of and think that my perspective would help you.</p>
+        <p class="panel-text">people have stopped writing emails, just send them.</p>
+        <a class="panel-mail" href="${esc(a)}">${esc(shown)}</a>`;
     } else if (m.label === "life") {
       panelBody.innerHTML = "";
     } else {
