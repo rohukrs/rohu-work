@@ -732,7 +732,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   .panel { left: 54vw; width: auto; }
   body.panel-open .stage { width: 54vw; max-width: 54vw; grid-template-columns: 180px minmax(0, 1fr); gap: 2.5vw; }
   body.panel-open .stamp-wrap { width: 180px; }
-  body.panel-open .brand { font-size: clamp(40px, 5vw, 72px); white-space: normal; line-height: 1; }
   body.panel-open .quick-links { flex-wrap: wrap; gap: 12px 18px; }
 }
 
@@ -741,7 +740,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   .panel { left: 54vw; width: auto; padding: 120px 4vw 70px 2vw; background: transparent; }
   body.panel-open .stage { display: grid; width: 54vw; max-width: 54vw; grid-template-columns: 180px minmax(0, 1fr); gap: 2.5vw; }
   body.panel-open .stamp-wrap { width: 180px; }
-  body.panel-open .brand { font-size: clamp(40px, 5vw, 72px); white-space: normal; line-height: 1; }
   body.panel-open .site-footer { display: flex; }
 }
 @media (max-width: 767px) {
@@ -760,5 +758,4 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 @media (min-width: 768px) {
   .panel { display: flex; flex-direction: column; padding-top: 9vh; padding-bottom: 7vh; }
   .panel-body { margin: auto 0; width: 100%; }
-  body.panel-open .brand { white-space: nowrap; font-size: clamp(36px, 4.6vw, 64px); }
 }

@@ -50,7 +50,7 @@ window.SITE = {
       label: "email",
       page: "/",
       description: "",
-      cta: { label: "workwithrohitkr@gmail.com ↗", href: "mailto:workwithrohitkr@gmail.com" },
+      cta: null,
     },
   ],
 
