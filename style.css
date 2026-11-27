@@ -11,8 +11,9 @@
 
 :root {
   --bg: #0035AD;
-  --fg: #F4E11B;
-  --fg2: rgba(244, 225, 27, 0.55); /* faded yellow, secondary text */
+  --fg: #FFE06B;
+  --fg2: #E8E5D9; /* secondary text */
+  --text: #FFF0CF; /* body text */
   --ease: cubic-bezier(0.12, 0.72, 0.18, 1);
   --speed: 0.72s;
 }
@@ -96,16 +97,16 @@ a { color: inherit; }
   display: block;
   width: max-content;
   white-space: nowrap;
-  color: var(--fg2);
+  color: var(--text);
   letter-spacing: 0.01em; /* a touch more open than "rohu", so it reads as its own word */
   padding-right: 0.12em;
 }
 
 .nav { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
 .nav button {
-  border: 1px solid rgba(255, 198, 107, 0.38);
+  border: 1px solid var(--fg);
   border-radius: 999px;
-  color: rgba(255, 198, 107, 0.75);
+  color: var(--fg);
   padding: 8px 14px;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -113,12 +114,12 @@ a { color: inherit; }
 .nav button[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg); }
 
 .section-content { margin-top: 28px; min-height: 46px; }
-.description { font-size: 15px; line-height: 1.5; color: #F4E11B; max-width: 430px; }
+.description { font-size: 15px; line-height: 1.5; color: var(--text); max-width: 430px; }
 .description .inline-link { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
 .description + .description { margin-top: 10px; }
 
 .quick-links { display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap; }
-.quick-links a { font-size: 14px; letter-spacing: -0.01em; text-decoration: none; color: rgba(255, 198, 107, 0.8); }
+.quick-links a { font-size: 14px; letter-spacing: -0.01em; text-decoration: none; color: var(--fg); }
 .quick-links a:hover { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
 
 .site-footer {
@@ -127,7 +128,7 @@ a { color: inherit; }
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  color: rgba(255, 198, 107, 0.65);
+  color: var(--fg);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -228,9 +229,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .mh-nav { display: flex; gap: 10px; flex-wrap: wrap; }
 
 .mh-nav a {
-  border: 1px solid rgba(255, 198, 107, 0.38);
+  border: 1px solid var(--fg);
   border-radius: 999px;
-  color: rgba(255, 198, 107, 0.75);
+  color: var(--fg);
   padding: 8px 14px;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -350,7 +351,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .arc-intro p {
   font-size: clamp(17px, 2vw, 20px);
   line-height: 1.55;
-  color: #F4E11B;
+  color: var(--text);
 }
 .arc-intro p:first-child {
   color: var(--fg);
@@ -405,7 +406,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   padding-left: 18px;
   font-size: 15px;
   line-height: 1.5;
-  color: #F4E11B;
+  color: var(--text);
 }
 .arc-points li::before {
   content: "·";
@@ -469,7 +470,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   font-size: 14px;
   letter-spacing: 0.08em;
   padding-top: 0.9em;
-  border-top: 1px solid rgba(255, 198, 107, 0.3);
+  border-top: 1px solid rgba(255, 224, 107, 0.3);
   height: max-content;
 }
 .tl-item article { min-width: 0; }
@@ -484,13 +485,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .tl-name a:hover { opacity: 0.85; }
 .tl-name .arc-arrow { font-size: 0.4em; vertical-align: super; margin-left: 8px; }
 .tl-meta { color: var(--fg2); font-size: 14px; letter-spacing: 0.02em; margin-top: 10px; }
-.tl-about { color: #F4E11B; font-size: 16px; line-height: 1.55; margin-top: 14px; max-width: 56ch; }
+.tl-about { color: var(--text); font-size: 16px; line-height: 1.55; margin-top: 14px; max-width: 56ch; }
 .tl-about + .tl-about { margin-top: 8px; }
 .tl-item .arc-points { margin-top: 16px; }
 .tl-media { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
 .tl-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 18px; }
 .tl-links a {
-  color: rgba(255, 198, 107, 0.8);
+  color: var(--fg);
   font-size: 14px;
   text-decoration: none;
 }
@@ -514,13 +515,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   align-items: start;
 }
 .vid { margin: 0; min-width: 0; }
-.vid-frame { position: relative; aspect-ratio: 16 / 9; background: rgba(255, 198, 107, 0.08); }
+.vid-frame { position: relative; aspect-ratio: 16 / 9; background: rgba(255, 224, 107, 0.08); }
 .vid-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .vid-empty {
   display: flex; align-items: center; justify-content: center;
   padding: 16px; text-align: center;
   color: var(--fg2); font-size: 13px; line-height: 1.4;
-  border: 1px dashed rgba(255, 198, 107, 0.35);
+  border: 1px dashed rgba(255, 224, 107, 0.35);
 }
 .vid figcaption { margin-top: 12px; }
 .vid-title {
@@ -539,7 +540,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 
 .essay-list { list-style: none; margin: 18px 0 0; padding: 0; max-width: 520px; }
 .essay-list li { display: flex; justify-content: space-between; gap: 18px; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
-.essay-list a { color: #f5c96b; text-decoration: none; }
+.essay-list a { color: var(--fg); text-decoration: none; }
 .essay-list time { opacity: 0.6; font-size: 13px; white-space: nowrap; }
 
 #work-mount[hidden] { display: none !important; }
@@ -656,11 +657,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .panel[hidden] { display: none; }
 @keyframes panelIn { from { opacity: 0; } to { opacity: 1; } }
 .panel-title { font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.05em; line-height: 1; margin-bottom: 18px; }
-.panel-text { font-size: 15px; font-weight: 500; line-height: 1.6; color: #F4E11B; max-width: 46ch; margin-top: 10px; }
+.panel-text { font-size: 15px; font-weight: 500; line-height: 1.6; color: var(--text); max-width: 46ch; margin-top: 10px; }
 .panel-mail { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--fg); }
 .panel-copy {
-  display: inline-block; margin-top: 14px; border: 1px solid rgba(255, 198, 107, 0.38); border-radius: 999px;
-  color: rgba(255, 198, 107, 0.75); background: none; padding: 6px 12px; font-size: 11px; cursor: pointer;
+  display: inline-block; margin-top: 14px; border: 1px solid var(--fg); border-radius: 999px;
+  color: var(--fg); background: none; padding: 6px 12px; font-size: 11px; cursor: pointer;
 }
 .panel #work-mount, .panel #videos-mount { padding: 0; margin: 0; max-width: none; }
 .panel .page-title { display: none; }
@@ -691,7 +692,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 }
 .arc-intro p:not(:first-of-type) {
   font-size: 18px; font-weight: 400; line-height: 1.45; letter-spacing: -0.01em;
-  max-width: 34ch; color: #F4E11B;
+  max-width: 34ch; color: var(--text);
 }
 .arc-intro p + p { margin-top: 0.9em; }
 .arc-section { margin-top: 96px; }
@@ -699,7 +700,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .arc-heading { margin-bottom: 20px; }
 .arc-group-title { margin-top: 32px; margin-bottom: 12px; }
 .description { font-size: 15px; font-weight: 400; line-height: 1.5; }
-.brand-sub { font-size: 15px; line-height: 1.4; color: rgba(244, 225, 27, 0.6); }
+.brand-sub { font-size: 15px; line-height: 1.4; color: var(--text); }
 @media (max-width: 650px) {
   .arc-section { margin-top: 64px; }
   .arc-section.arc-intro { margin-top: 0; }
@@ -716,3 +717,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 }
 .yt-subscribe:hover { opacity: 0.8; }
 .yt-subscribe .arc-arrow { color: var(--fg); }
+
+/* ---- interaction and contrast polish ---- */
+.nav button, .mh-nav a, .quick-links a, .arc-link, .tl-links a, .vid-title {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+}
+.nav button { border-width: 1px; }
+.nav button:hover { border-color: var(--fg); background: rgba(255, 224, 107, 0.12); }
+.nav button[aria-pressed="true"]:hover { background: var(--fg); }
+.site-footer { color: var(--fg2); }
