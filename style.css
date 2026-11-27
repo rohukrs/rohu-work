@@ -10,9 +10,9 @@
 }
 
 :root {
-  --bg: #194fc7;
-  --fg: #ffc66b;
-  --fg2: rgba(247, 219, 168, 0.55); /* faded cream, secondary text */
+  --bg: #0035AD;
+  --fg: #F4E11B;
+  --fg2: rgba(244, 225, 27, 0.55); /* faded yellow, secondary text */
   --ease: cubic-bezier(0.12, 0.72, 0.18, 1);
   --speed: 0.72s;
 }
@@ -113,7 +113,7 @@ a { color: inherit; }
 .nav button[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg); }
 
 .section-content { margin-top: 28px; min-height: 46px; }
-.description { font-size: 15px; line-height: 1.5; color: #f7dba8; max-width: 430px; }
+.description { font-size: 15px; line-height: 1.5; color: #F4E11B; max-width: 430px; }
 .description .inline-link { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
 .description + .description { margin-top: 10px; }
 
@@ -350,7 +350,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .arc-intro p {
   font-size: clamp(17px, 2vw, 20px);
   line-height: 1.55;
-  color: #f7dba8;
+  color: #F4E11B;
 }
 .arc-intro p:first-child {
   color: var(--fg);
@@ -405,7 +405,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   padding-left: 18px;
   font-size: 15px;
   line-height: 1.5;
-  color: #f7dba8;
+  color: #F4E11B;
 }
 .arc-points li::before {
   content: "·";
@@ -484,7 +484,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .tl-name a:hover { opacity: 0.85; }
 .tl-name .arc-arrow { font-size: 0.4em; vertical-align: super; margin-left: 8px; }
 .tl-meta { color: var(--fg2); font-size: 14px; letter-spacing: 0.02em; margin-top: 10px; }
-.tl-about { color: #f7dba8; font-size: 16px; line-height: 1.55; margin-top: 14px; max-width: 56ch; }
+.tl-about { color: #F4E11B; font-size: 16px; line-height: 1.55; margin-top: 14px; max-width: 56ch; }
 .tl-about + .tl-about { margin-top: 8px; }
 .tl-item .arc-points { margin-top: 16px; }
 .tl-media { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
@@ -656,7 +656,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .panel[hidden] { display: none; }
 @keyframes panelIn { from { opacity: 0; } to { opacity: 1; } }
 .panel-title { font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.05em; line-height: 1; margin-bottom: 18px; }
-.panel-text { font-size: 15px; font-weight: 500; line-height: 1.6; color: #f7dba8; max-width: 46ch; margin-top: 10px; }
+.panel-text { font-size: 15px; font-weight: 500; line-height: 1.6; color: #F4E11B; max-width: 46ch; margin-top: 10px; }
 .panel-mail { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--fg); }
 .panel-copy {
   display: inline-block; margin-top: 14px; border: 1px solid rgba(255, 198, 107, 0.38); border-radius: 999px;
@@ -691,7 +691,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 }
 .arc-intro p:not(:first-of-type) {
   font-size: 18px; font-weight: 400; line-height: 1.45; letter-spacing: -0.01em;
-  max-width: 34ch; color: #f7dba8;
+  max-width: 34ch; color: #F4E11B;
 }
 .arc-intro p + p { margin-top: 0.9em; }
 .arc-section { margin-top: 96px; }
@@ -699,7 +699,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .arc-heading { margin-bottom: 20px; }
 .arc-group-title { margin-top: 32px; margin-bottom: 12px; }
 .description { font-size: 15px; font-weight: 400; line-height: 1.5; }
-.brand-sub { font-size: 15px; line-height: 1.4; color: rgba(247, 219, 168, 0.6); }
+.brand-sub { font-size: 15px; line-height: 1.4; color: rgba(244, 225, 27, 0.6); }
 @media (max-width: 650px) {
   .arc-section { margin-top: 64px; }
   .arc-section.arc-intro { margin-top: 0; }
