@@ -87,11 +87,6 @@
     } else if (m.inline === "videos") {
       videosMount.hidden = false;
       panelBody.appendChild(videosMount);
-    } else if (m.label === "email") {
-      panelBody.innerHTML = `
-        <h2 class="panel-title">email</h2>
-        <p class="panel-text">send me an email if you're still figuring out a part of life that i don't know of and think that my perspective would help you.</p>
-        <p class="panel-text">people have stopped writing emails, just send them.</p>`;
     } else if (m.label === "life") {
       panelBody.innerHTML = "";
     } else {
