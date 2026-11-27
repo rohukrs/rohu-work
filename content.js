@@ -52,5 +52,7 @@ window.SITE = {
     { label: "linkedin ↗", href: "https://www.linkedin.com/in/rohit-kumar-0443b3183/" },
     { label: "instagram ↗", href: "https://instagram.com/rohukrs" },
     { label: "made it desi ↗", href: "https://instagram.com/madeitdesi" },
+    { label: "youtube ↗", href: "https://www.youtube.com/@rohukrs" },
+    { label: "workwithrohitkr@gmail.com ↗", href: "mailto:workwithrohitkr@gmail.com" },
   ],
 };
