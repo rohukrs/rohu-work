@@ -749,3 +749,16 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   body.panel-open .stage { display: flex; min-height: auto; padding-bottom: 40px; }
   body.panel-open .site-footer { display: none; }
 }
+
+/* ---- email fix: one vertical axis for profile and main content; headings stay on one line ---- */
+.profile-mail {
+  display: inline-block; margin-top: 20px;
+  font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+  color: var(--fg); text-decoration: underline; text-underline-offset: 3px;
+}
+.profile-mail:hover { opacity: 0.8; }
+@media (min-width: 768px) {
+  .panel { display: flex; flex-direction: column; padding-top: 9vh; padding-bottom: 7vh; }
+  .panel-body { margin: auto 0; width: 100%; }
+  body.panel-open .brand { white-space: nowrap; font-size: clamp(36px, 4.6vw, 64px); }
+}
