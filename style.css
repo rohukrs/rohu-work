@@ -11,9 +11,9 @@
 
 :root {
   --bg: #0035AD;
-  --fg: #FFE06B;
-  --fg2: #E8E5D9; /* secondary text */
-  --text: #FFF0CF; /* body text */
+  --fg: #FFD96C;
+  --fg2: #F3E2BE; /* secondary text */
+  --text: #FFEDCB; /* body text */
   --ease: cubic-bezier(0.12, 0.72, 0.18, 1);
   --speed: 0.72s;
 }
@@ -734,4 +734,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   body.panel-open .stamp-wrap { width: 180px; }
   body.panel-open .brand { font-size: clamp(40px, 5vw, 72px); white-space: normal; line-height: 1; }
   body.panel-open .quick-links { flex-wrap: wrap; gap: 12px 18px; }
+}
+
+/* ---- layout architecture: two columns from 768px, stacked below 768px ---- */
+@media (min-width: 768px) and (max-width: 900px) {
+  .panel { left: 54vw; width: auto; padding: 120px 4vw 70px 2vw; background: transparent; }
+  body.panel-open .stage { display: grid; width: 54vw; max-width: 54vw; grid-template-columns: 180px minmax(0, 1fr); gap: 2.5vw; }
+  body.panel-open .stamp-wrap { width: 180px; }
+  body.panel-open .brand { font-size: clamp(40px, 5vw, 72px); white-space: normal; line-height: 1; }
+  body.panel-open .site-footer { display: flex; }
+}
+@media (max-width: 767px) {
+  .panel { position: static; left: auto; right: auto; width: auto; overflow: visible; animation: none; background: transparent; padding: 8px 22px 60px; }
+  body.panel-open .stage { display: flex; min-height: auto; padding-bottom: 40px; }
+  body.panel-open .site-footer { display: none; }
 }
