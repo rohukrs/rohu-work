@@ -62,7 +62,7 @@
     }, 760);
   }
 
-  // the side panel: work and videos move their content in, life and email get their own
+  // the side panel: work and videos move their content in; life stays on the homepage
   const panel = document.getElementById("panel");
   const panelBody = document.getElementById("panelBody");
   const workMount = document.getElementById("work-mount");

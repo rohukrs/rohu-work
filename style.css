@@ -564,13 +564,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 .description { font-size: 14px; font-weight: 500; line-height: 1.55; max-width: 400px; }
 .quick-links { margin-top: 26px; gap: 18px; flex-wrap: nowrap; }
 .quick-links a { font-size: 13px; white-space: nowrap; }
-.say-hello {
-  display: inline-block; margin-top: 26px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--fg2); text-decoration: none;
-  border-bottom: 1px solid currentColor; padding-bottom: 2px;
-}
-.say-hello:hover { color: var(--fg); }
 @media (max-width: 900px) { .brand { font-size: clamp(42px, 6.4vw, 70px); } }
 @media (max-width: 650px) {
   .brand { font-size: clamp(40px, 10vw, 60px); }
@@ -658,11 +651,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
 @keyframes panelIn { from { opacity: 0; } to { opacity: 1; } }
 .panel-title { font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.05em; line-height: 1; margin-bottom: 18px; }
 .panel-text { font-size: 15px; font-weight: 500; line-height: 1.6; color: var(--text); max-width: 46ch; margin-top: 10px; }
-.panel-mail { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--fg); }
-.panel-copy {
-  display: inline-block; margin-top: 14px; border: 1px solid var(--fg); border-radius: 999px;
-  color: var(--fg); background: none; padding: 6px 12px; font-size: 11px; cursor: pointer;
-}
 .panel #work-mount, .panel #videos-mount { padding: 0; margin: 0; max-width: none; }
 .panel .page-title { display: none; }
 
@@ -748,13 +736,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-of
   body.panel-open .site-footer { display: none; }
 }
 
-/* ---- email fix: one vertical axis for profile and main content; headings stay on one line ---- */
-.profile-mail {
-  display: inline-block; margin-top: 20px;
-  font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
-  color: var(--fg); text-decoration: underline; text-underline-offset: 3px;
-}
-.profile-mail:hover { opacity: 0.8; }
 @media (min-width: 768px) {
   .panel { display: flex; flex-direction: column; padding-top: 9vh; padding-bottom: 7vh; }
   .panel-body { margin: auto 0; width: 100%; }
