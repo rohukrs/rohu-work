@@ -147,7 +147,6 @@ function nav() {
   <a class="writing-nav-home" href="/">rohu</a>
   <nav aria-label="main navigation">
     <a href="/">home</a>
-    <a href="https://www.youtube.com/@rohukrs" target="_blank" rel="noopener">youtube ↗</a>
     <a href="https://www.instagram.com/rohukrs/" target="_blank" rel="noopener">instagram ↗</a>
   </nav>
 </header>`;
